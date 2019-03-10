@@ -8,8 +8,10 @@ const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/users');
 
-mongoose.connect(
-  process.env.MONGODB_URI,
+mongoose.connect('mongodb+srv://'
+  + process.env.MONGO_ATLAS_USR  + ':'
+  + process.env.MONGO_ATLAS_PW
+  + '@cluster0-7en5t.mongodb.net/test?retryWrites=true',
   {
     useNewUrlParser: true
   }
